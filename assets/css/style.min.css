@@ -22,7 +22,7 @@
   --bs-secondary-bg-subtle: #3d759c1a;
   --bs-link-color: var(--bs-primary);
   --bs-link-color-rgb: var(--bs-primary-rgb);
-  --bs-link-hover-color: #00cfc3;
+  --bs-link-hover-color: #3da1a5;
   --bs-link-hover-color-rgb: 0, 207, 195;
   --bs-highlight-bg: var(--bs-primary);
   --bs-border-width: 1px;
@@ -1760,7 +1760,7 @@ button[class*="-dark"]:hover {
   color: var(--bs-white);
 }
 .site_footer .info_list a:hover {
-  color: var(--bs-secondary);
+  color: var(--bs-link-hover-color);
 }
 .site_footer .info_list a:hover .info_icon i {
   opacity: 1;
@@ -1781,7 +1781,7 @@ button[class*="-dark"]:hover {
   text-decoration: underline;
 }
 .copyright_widget .copyright_text a:hover {
-  color: #3da1a5;
+  color: var(--bs-link-hover-color);
 }
 .page_banner {
   overflow: hidden;
