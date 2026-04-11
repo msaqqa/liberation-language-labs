@@ -590,7 +590,7 @@ mark {
   color: var(--bs-bodt-color);
 }
 .contact_info_list .item_info {
-  line-height: 1;
+  line-height: 1.25;
   font-size: 17px;
   font-weight: 700;
   color: var(--bs-dark);
@@ -1656,7 +1656,7 @@ button[class*="-dark"]:hover {
   font-size: 16px;
   font-weight: 700;
   position: relative;
-  padding: 10px 14px;
+  padding: 10px 12px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
