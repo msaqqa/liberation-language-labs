@@ -1982,7 +1982,6 @@ button[class*="-dark"]:hover {
 .read-more-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   cursor: pointer;
   padding-top: 10px;
