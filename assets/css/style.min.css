@@ -40,6 +40,11 @@
   --bs-focus-ring-opacity: 0.25;
   --bs-focus-ring-color: rgba(155, 66, 182, 0.25);
 }
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -538,7 +543,8 @@ mark {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  word-break: break-all;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .contact_info_list > li:hover .item_icon:before {
   top: -4px;
@@ -803,16 +809,6 @@ button[class*="-dark"]:hover {
   -webkit-box-shadow: 0 8px 20px 0 rgba(61, 117, 156, 0.3);
   box-shadow: 0 8px 20px 0 rgba(61, 117, 156, 0.3);
 }
-/* .btn-link:hover {
-  color: var(--bs-primary);
-}
-.btn-link:hover .btn_text:before {
-  width: 100%;
-}
-.btn-link:hover .btn_icon {
-  -webkit-transform: translateX(4px);
-  transform: translateX(4px);
-} */
 .btn_reply {
   line-height: 1;
   font-size: 16px;
@@ -1983,6 +1979,9 @@ button[class*="-dark"]:hover {
 }
 .read-more-btn {
   cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
 }
 .read-more-input:checked ~ .read-more-btn::before {
   content: "Read Less";
@@ -2839,7 +2838,8 @@ blockquote cite {
 .contact_info_box {
   padding: 40px;
   overflow: hidden;
-  word-break: break-all;
+  word-break: break-word;
+  overflow-wrap: break-word;
   -webkit-transition: var(--bs-transition);
   transition: var(--bs-transition);
   border-radius: var(--bs-border-radius);
@@ -3257,6 +3257,8 @@ blockquote cite {
     border: 1px solid rgba(155, 66, 182, 0.3);
     -webkit-box-shadow: 0 5px 20px 0 rgba(155, 66, 182, 0.12);
     box-shadow: 0 5px 20px 0 rgba(155, 66, 182, 0.12);
+    max-height: 75vh;
+    overflow-y: auto;
   }
   .main_menu_list > li > a {
     width: 100%;
@@ -3388,7 +3390,21 @@ blockquote cite {
   .main_menu {
     top: 68px;
   }
+  .header_btns_group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
   .header_btns_group > li:not(:first-child) {
+    display: block;
+    margin-left: 10px;
+  }
+  .btn_hotline .btn_text {
     display: none;
   }
   .hero_section {
@@ -3467,9 +3483,6 @@ blockquote cite {
   .error_section h2 {
     font-size: 36px;
   }
-  .consultation_form {
-    padding: 60px 30px;
-  }
   .section_heading {
     margin-bottom: 20px;
   }
@@ -3482,10 +3495,16 @@ blockquote cite {
   .consultation_form {
     margin: 0 -15px;
     border-radius: 0;
-    padding: 70px 30px 80px;
+    padding: 40px 20px;
   }
-  .pricing_item {
-    padding: 60px 30px;
+  .office_hour_list,
+  .pricing_item,
+  .contact_info_box,
+  .service_item {
+    padding: 30px 20px;
+  }
+  .image_widget:has(.bg_primary_light) {
+    padding: 0 15px 15px 0;
   }
   .pricing_item .pricing_heading {
     font-size: 22px;
@@ -3560,9 +3579,6 @@ blockquote cite {
   .images_group_widget {
     padding: 20px;
   }
-  .office_hour_list {
-    padding: 40px;
-  }
   .gmap_canvas iframe {
     height: 300px;
   }
@@ -3570,15 +3586,13 @@ blockquote cite {
     bottom: 98px;
   }
   .service_item {
-    padding: 35px;
+    padding: 30px 20px;
   }
-  .service_item .item_title {
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 10px;
+  .office_hour_list {
+    padding: 30px 20px;
   }
   .image_widget:has(.bg_primary_light) {
-    padding: 0 30px 30px 0;
+    padding: 0 15px 15px 0;
   }
   .image_widget:has(.bg_secondary_light) {
     padding: 0 30px 30px 30px;
@@ -3628,12 +3642,15 @@ blockquote cite {
 }
 @media screen and (max-width: 375px) {
   .hero_section .heading_text {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 26px;
+    line-height: 34px;
   }
   .section_heading .section_heading_text {
     font-size: 24px;
-    line-height: 34px;
+    line-height: 32px;
+  }
+  .btn {
+    padding: 0px 24px;
   }
   .pricing_toggle_btn {
     -webkit-box-orient: vertical;
