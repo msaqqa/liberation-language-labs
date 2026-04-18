@@ -1964,7 +1964,9 @@ button[class*="-dark"]:hover {
   color: var(--bs-secondary);
   font-weight: bold;
   cursor: pointer;
-  display: block;
+  display: inline-block;
+  width: max-content !important;
+  flex: 0 0 auto;
 
   background-image: linear-gradient(var(--bs-primary), var(--bs-primary));
   background-position: 0% 100%;
@@ -1978,9 +1980,11 @@ button[class*="-dark"]:hover {
   -webkit-line-clamp: unset;
 }
 .read-more-btn {
-  cursor: pointer;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  cursor: pointer;
   padding-top: 10px;
 }
 .read-more-input:checked ~ .read-more-btn::before {
@@ -3711,5 +3715,20 @@ blockquote cite {
   }
   .page_banner .decoration_item.shape_leaf_2 {
     right: -20px;
+  }
+}
+@media (hover: none) {
+  .read-more-input:hover ~ .read-more-btn::before {
+    color: var(--bs-secondary) !important;
+    background-size: 0% 1px !important;
+  }
+  .read-more-input:hover ~ .read-more-btn .btn-link .btn_icon {
+    background-color: var(--bs-secondary) !important;
+    transform: translateX(0) !important;
+    -webkit-transform: translateX(0) !important;
+  }
+  .read-more-input:checked:hover ~ .read-more-btn .btn-link .btn_icon {
+    transform: translateX(0) !important;
+    -webkit-transform: translateX(0) !important;
   }
 }
